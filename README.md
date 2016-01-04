@@ -10,4 +10,5 @@ Repository containing the raw data, and scripts for manipulating and analysing d
   - [x] **r**: data_analysis.R
   
 - The files:
+  - [x] **README.md** 
   - [x] **environment.txt** contains the information (*sessionInfo()*) on the R environment. 
