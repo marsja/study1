@@ -1,4 +1,5 @@
-# study1
+# Deviance distraction in the auditory and tactile modalities after repeated exposure: differential aspects of tactile and auditory deviants
+
 Repository containing the raw data, and scripts for manipulating and analysing data. 
 
 -  The subdirectories:
