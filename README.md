@@ -4,9 +4,9 @@ Repository containing the raw data, and scripts for manipulating and analysing d
 
 -  The subdirectories:
 
-  - [x] **Data**: contains the raw data ("_STUDY1_raw_data.csv") and the output of the Python script ("_STUDY1_post-dev-std.csv")
+  - [x] **Data**: contains the raw data ("_STUDY1_raw_data.csv") and the file which the analysis were run on ("_STUDY1_post-dev-std.csv")
 
-  - [x] **py**: oddball_rename_trialtypes.py script for renaming factors (i.e., "Novel" to "Deviant") and adding a factor (i.e.,        "PostDeviantStandard").
+  - [x] **py**: oddball_rename_trialtypes.py script for renaming factors (i.e., "Novel" to "Deviant") and adding a factor (i.e.,        "PostDeviantStandard"). The script creates the file "_STUDY1_post-dev-std.csv".
   - [x] **r**: data_analysis.R
   
 - The files:
