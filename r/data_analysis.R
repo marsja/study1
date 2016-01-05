@@ -40,7 +40,7 @@ dataFrame.rt <- subset(dataFrame, Accuracy == 1)
 require(afex)
 rt.aov <- aov_ez("Sub_id", 
                  "RT", 
-                 dataFrame,
+                 dataFrame.rt,
                  within = c("Modality", "TrialType", "BlockModality"),
                  anova_table=list(correction = "none", es ='pes'),
                  print.formula = T
@@ -49,7 +49,7 @@ rt.aov
 
 ##2.2 Following up the three-way interaction with two seperate ANOVAs in each modality
 ###2.2.1 Auditory Modality
-Sound.dataFrame <- dataFrame[dataFrame$Modality == 'Sound',]
+Sound.dataFrame <- dataFrame[dataFrame.rt$Modality == 'Sound',]
 Sound.dataFrame <- droplevels(Sound.dataFrame)
 soundMod <-  aov_ez("Sub_id", "RT", 
                     Sound.dataFrame,
@@ -63,7 +63,7 @@ lsmeans(soundMod, "TrialType", contr="pairwise", adjust="holm")
 
 ###2.2.2 Tactile Modality
 
-Tactile.dataFrame <- dataFrame[dataFrame$Modality == 'Vibration',]
+Tactile.dataFrame <- dataFrame[dataFrame.rt$Modality == 'Vibration',]
 Tactile.dataFrame  <- droplevels(Tactile.dataFrame )
 tactileMod <-  aov_ez("Sub_id", 
                       "RT", 
@@ -77,7 +77,7 @@ lsmeans(one.tactileMod, "TrialType", contr="pairwise", adjust="holm")
 
 ###2.3 Test of Main effects in block 1 and block 4 seperately
 ###2.3.1 Block 1
-one.tactile = subset(Tactile.dataFrame, BlockModality == 1)
+one.tactile <- subset(Tactile.dataFrame, BlockModality == 1)
 one.tactileMod <-  aov_ez("Sub_id", 
                       "RT", 
                       one.tactile,
@@ -87,7 +87,7 @@ one.tactileMod <-  aov_ez("Sub_id",
 )
 
 ###2.3.1 Block 4
-four.tactile = subset(Tactile.dataFrame, BlockModality == 4)
+four.tactile <- subset(Tactile.dataFrame, BlockModality == 4)
 four.tactileMod <-  aov_ez("Sub_id", 
                           "RT", 
                           four.tactile,
