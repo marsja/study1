@@ -11,4 +11,4 @@ Repository containing the raw data, and scripts for manipulating and analysing d
   
 - The files:
   - [x] **README.md** 
-  - [x] **environment.txt** contains the information (*sessionInfo()*) on the R environment. That is, information of packages versions of the packages loaded (e.g., afex and lsmeans)
+  - [x] **environment.txt** contains the information (*sessionInfo()*) on the R environment. E.g., what versions of the packages used for analysing the data (e.g., afex and lsmeans).
