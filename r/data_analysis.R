@@ -30,13 +30,13 @@ dataFrame <- subset(dataFrame, BlockModality == 1 | BlockModality == 4)
 dataFrame$BlockModality <- as.factor(dataFrame$BlockModality)
 dataFrame <- droplevels(dataFrame)
 #Exclude response latencies < 200 ms.
-dataFrame <- subset(dataFrame, RT > 200)
+dataFrame <- subset(dataFrame, RT >= 200)
 #Hit only for response latencies analysis (our DV of interest)
 dataFrame.rt <- subset(dataFrame, Accuracy == 1)
 
 ##2. Data analysis
 
-##2.1 Omnibus ANOVA using afex 
+##2.1 Omnibus ANOVA using afex.
 require(afex)
 rt.aov <- aov_ez("Sub_id", 
                  "RT", 
@@ -49,7 +49,7 @@ rt.aov
 
 ##2.2 Following up the three-way interaction with two seperate ANOVAs in each modality
 ###2.2.1 Auditory Modality
-Sound.dataFrame <- dataFrame[dataFrame.rt$Modality == 'Sound',]
+Sound.dataFrame <- subset(dataFrame.rt, Modality == "Sound")
 Sound.dataFrame <- droplevels(Sound.dataFrame)
 soundMod <-  aov_ez("Sub_id", "RT", 
                     Sound.dataFrame,
@@ -63,7 +63,7 @@ lsmeans(soundMod, "TrialType", contr="pairwise", adjust="holm")
 
 ###2.2.2 Tactile Modality
 
-Tactile.dataFrame <- dataFrame[dataFrame.rt$Modality == 'Vibration',]
+Tactile.dataFrame <- subset(dataFrame.rt, Modality == "Vibration")
 Tactile.dataFrame  <- droplevels(Tactile.dataFrame )
 tactileMod <-  aov_ez("Sub_id", 
                       "RT", 
