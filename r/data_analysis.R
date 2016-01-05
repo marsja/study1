@@ -97,7 +97,7 @@ four.tactileMod <-  aov_ez("Sub_id",
 )
 
 
-###3.3.2 Pairwise comparsions in block 2 (due to sig. main effect)
+###3.3.2 Pairwise comparsions in block 1 (due to sig. main effect)
 lsmeans(one.tactileMod, "TrialType", contr="pairwise", adjust="holm")
 
 #########################################################################################################
