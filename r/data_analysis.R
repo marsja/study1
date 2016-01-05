@@ -101,7 +101,11 @@ four.tactileMod <-  aov_ez("Sub_id",
 lsmeans(one.tactileMod, "TrialType", contr="pairwise", adjust="holm")
 
 #########################################################################################################
-#4. Accuracy Analysis
+#4. Accuracy Analysis (note, analysis reported FIRST in the manuscript)
+
+#Overall performance
+require(dplyr)
+acc.descriptives <- summarise(dataFrame, M = mean(Accuracy), sd = sd(Accuracy))
 
 accuracy.aov <-  aov_ez("Sub_id", 
                  "Accuracy", 
