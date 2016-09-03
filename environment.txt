@@ -1,5 +1,5 @@
 ####################################################################################################################
-#' Version of packages used (2016-09-03).                                                                          #
+#' Versions of packages used (2016-09-03).                                                                          #
 #' Obtained by using sink:                                                                                         #      
 #' sink("environment.txt")                                                                                         #
 #' sessionInfo()                                                                                                   #
