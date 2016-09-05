@@ -7,7 +7,7 @@ Repository containing the raw data, and scripts for manipulating and analysing d
   - [x] **Data**: contains the raw data ("_STUDY1_raw_data.csv") and the file which the analysis were run on ("_STUDY1_post-dev-std.csv")
 
   - [x] **py**: oddball_rename_trialtypes.py script for renaming factors (i.e., "Novel" to "Deviant") and adding a factor (i.e.,        "Post-deviant-standard"). The script creates the file "_STUDY1_post-dev-std.csv".
-  - [] **r**: **NEW ANALYSIS TO BE UPLOADED**
+  - [x] **r**: data_analysis.R
   
 - The files:
   - [x] **README.md** 
